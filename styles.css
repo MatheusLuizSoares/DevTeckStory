@@ -45,8 +45,115 @@ header nav ul li::after{
   width: 0;
   height: 2px;
   background-color: #00f7ff;
+
+  transition: width 0.5s ease;
 }
 header nav ul li:hover::after{
   width: 100%;
-  transition: width 0.3s ease-in-out;
+}
+
+.container{
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(135deg, #1a1a2e, #1f213e);
+  overflow: hidden;
+  position: relative;
+}
+
+.container::before{
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50px;
+  background: radial-gradient(circle, rgba(0, 247, 255, 0.1)0%, rgba(15, 15, 40, 0.2) 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(50px);
+  z-index: 1;
+  animation: pulse 10s infinite alternate;
+}
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  
+  
+}
+.list{
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.item {
+  position: absolute;
+  inset: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+.active{
+  opacity: 1;
+  
+}
+.product-img {
+  width: 300px; /* Aumente conforme necessário */
+  height: 300px; /* Altura adequada para produtos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.product-img img {
+  width: 100%; /* Ocupa toda a largura do container */
+  height: auto; /* Mantém proporção */
+  max-height: 100%; /* Limita ao tamanho do container */
+  object-fit: contain; /* Garante que a imagem inteira seja visível */
+  filter: drop-shadow(0 0 30px rgba(0, 247, 255, 0.5));
+}
+
+.content {
+  width: 55%;
+  padding-right: 80px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 2;
+  flex-direction: column;
+}
+.product-tag{
+  font-size: 1rem;
+  text-transform: uppercase;
+  color:#00f7ff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  
+}
+.product-name{
+  font-size: 4.5rem;
+  font-family: "Orbitron", sans-serif;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.description{
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 600px;
 }
