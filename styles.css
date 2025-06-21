@@ -157,3 +157,155 @@ header nav ul li:hover::after{
   margin-bottom: 30px;
   max-width: 600px;
 }
+.btn {
+  position: relative;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #00f7ff;
+  border: 1px solid #00f7ff;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden; /* Adicionei para conter o efeito */
+  z-index: 1; /* Garante que o texto fique acima do ::after */
+  transition: color 0.3s ease; /* Transição para a cor do texto */
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 100%; /* Alterei para preencher toda a altura */
+  background-color: #00d4cd;
+  transition: width 0.3s ease; /* Corrigi para animar width */
+  z-index: -1; /* Coloca atrás do texto */
+}
+
+.btn:hover {
+  color: #0f0f1e; /* Muda a cor do texto ao passar o mouse */
+}
+
+.btn:hover::after {
+  width: 100%;
+}
+.arrows{
+position: absolute;
+width: 90%;
+display: flex;
+justify-content: space-between;
+top:50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 5;
+}
+.arrow-btn{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgb(255,247,255,0.1);
+  border: 1px solid rgb(0,247,255,0.3);
+
+}
+.arrow-btn:hover{
+  background-color:rgb(0,247,255,0.2);
+  box-shadow: 0 0 10px rgb(0,247,255,0.5);
+  border-color: rgb(0,247,255,0.5);
+  transition: all 0.3s ease;
+
+}
+.indicators{
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+}
+.numbers{
+font-family: "Orbitron", sans-serif;
+  font-size: 3rem;
+  color: #00f7ff;
+  font-weight: 800;
+  color: rgb(255,247,255,0.3);
+}
+.dots{
+ display: flex;
+  gap: 10px;
+}
+.dot {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: rgb(255,247,255,0.3);
+  
+  
+}
+.dot.active {
+  background-color: #00f7ff;
+  
+  box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+}
+
+ 
+       /* CÍRCULOS DE FUNDO - CORREÇÃO */
+    .circles-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+    
+    .tech-circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 247, 255, 0.2);
+      animation: float 25s infinite linear;
+    }
+    
+    .circle:nth-child(1) {
+      width: 200px;
+      height: 200px;
+      top: 10%;
+      left: 10%;
+      animation-duration: 20s;
+    }
+    
+    .circle:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      bottom: 10%;
+      right: 10%;
+      animation-duration: 30s;
+    }
+    
+    .circle:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      top: 50%;
+      left: 5%;
+      animation-duration: 25s;
+    }
+    
+    .circle:nth-child(4) {
+      width: 50px;
+      height: 50px;
+      bottom: 15%;
+      left: 15%;
+      animation-duration: 35s;
+    }
