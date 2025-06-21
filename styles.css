@@ -101,9 +101,13 @@ header nav ul li:hover::after{
   justify-content: center;
   align-items: center;
   opacity: 0;
+
+  transform: translate((100vw));
+  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
 }
 .active{
   opacity: 1;
+  transform: translate(0);
   
 }
 .product-img {
@@ -121,6 +125,15 @@ header nav ul li:hover::after{
   max-height: 100%; /* Limita ao tamanho do container */
   object-fit: contain; /* Garante que a imagem inteira seja visível */
   filter: drop-shadow(0 0 30px rgba(0, 247, 255, 0.5));
+  transform: translate(200px);
+  opacity: 0;
+ transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+  transition-delay: 0.5;
+}
+.active .product-img img {
+  transform: translate(0);
+  opacity: 1;
+ 
 }
 
 .content {
